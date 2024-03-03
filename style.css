@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+  line-height: 64px;
+  color: #222;
+}
+
+h2 {
+  font-size: 46px;
+  line-height: 54px;
+  color: #222;
+}
+
+h4 {
+  font-size: 20px;
+  color: #222;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+p {
+  font-size: 16px;
+  color: #465b52;
+  margin: 15px 0 20px 0;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #150b2c;
+    color: white;
+    padding: 20px 60px;
+    gap: 16px;
+    flex-wrap: wrap;
+    box-shadow: 0 5px 15px rgba(1, 10, 1, 0.8);
+}
+#logo {
+    flex-grow: 1;
+}
+
+#search-box {
+    flex-grow: 3;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    position: relative;
+}
+.search-input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    flex-grow: 1;
+}
+
+.search-input::placeholder {
+    color: lightgray;
+}
+
+#search-icon {
+    color: #111;
+    cursor: pointer;
+    padding-right: 10px;
+}
+
+#nav_bar {
+    padding: 0%;
+    flex-grow: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav_bar li {
+    list-style: none;
+    padding: 0px 20px;
+    position: relative;
+}
+
+#nav_bar li a {
+    text-decoration: none;
+    color: rgb(19, 164, 221);
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+#nav_bar li a:hover,
+#nav_bar a.active {
+    color: rgb(230, 245, 18);
+}
+
+#nav_bar a.active {
+    font-weight: 750;
+}
+
+#nav_bar li a:hover::after,
+#nav_bar a.active::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: rgb(230, 245, 18);
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+
+/* Footer */
+footer {
+    width: 100%;
+    background-color: rgb(41, 54, 199);
+    display: flex;
+    position: absolute;
+    
+}
+
+footer p {
+    color: rgb(5, 19, 32);
+}
+
+/* page under develping */
+.under_develop {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 100px 20px;
+}
