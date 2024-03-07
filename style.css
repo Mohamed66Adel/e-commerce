@@ -35,24 +35,42 @@ p {
   margin: 15px 0 20px 0;
 }
 
+#section-p1 {
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
 /* Header */
 header {
+    height: 15vh;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #150b2c;
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #150b2c;
-    color: white;
-    padding: 20px 60px;
+    padding: 20px 30;
     gap: 16px;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     box-shadow: 0 5px 15px rgba(1, 10, 1, 0.8);
 }
-#logo {
-    flex-grow: 1;
+/* @media (max-width: 768px){
+
+} */
+.Logo {
+    flex-grow: 0;
+    flex-basis: 100px;
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
 }
 
 #search-box {
     flex-grow: 3;
+    flex-shrink: 1;
+    flex-basis: 450;
     background-color: white;
     padding: 10px;
     border-radius: 20px;
@@ -77,10 +95,12 @@ header {
 }
 
 #nav_bar {
+    flex-shrink: 1;
     padding: 0%;
+    flex-basis: 450px;
     flex-grow: 3;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -118,21 +138,71 @@ header {
     left: 20px;
 }
 
+/* Slider Products */
+#slider{
+    background: url("images/Bg.png");
+    background-size:contain;
+    overflow: hidden;
+}
+
+/* *********** */
+#swapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    
+}
+.pro-names{
+    display: flex;
+}
+.pro-names li{
+    list-style: none;
+    padding: 3px 3px;
+}
+
+/* ************* */
+
+#sliderWrapper {
+    display: flex;
+    width: 200vw;
+    justify-content: space-around;
+    transition: all 1s ease-in-out;
+}
+.sliderItem {
+    display: flex;
+    justify-content: center;
+}
+
+.pro-container {
+    width: 36%;
+    padding: 10px 12px;
+    margin: 20px 40px;
+    border: 5px;
+    border-radius: 10px;
+    /* background-color: rgb(230, 225, 218); */
+    background-color: rgb(148, 247, 143);
+}
+.pro-container img{
+    width: 100%;
+    border-radius: 20px;
+}
+
 
 /* Footer */
 footer {
     width: 100%;
+    bottom: 0;
     background-color: rgb(41, 54, 199);
     display: flex;
-    position: absolute;
-    
 }
 
 footer p {
     color: rgb(5, 19, 32);
 }
 
-/* page under develping */
+
+/* page under developing */
 .under_develop {
     display: flex;
     flex-wrap: wrap;
