@@ -2,6 +2,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="style.css" />
         <link
             rel="stylesheet"
@@ -15,26 +16,31 @@
     </head>
 
     <body>
-        <header>
+        <div class="header">
             <div class="nav_item Logo">
                 <a href="index.html"><img src="images/Logo.png" alt="Logo" class="Logo"></a>
             </div>
 
             <div class="navItem" id="search-box">
-                <input type="text" placeholder="Search..." class="search-input" />
+                <input type="text" placeholder="Search..." class="search-input" id="search-field" />
                 <div class="search-icon">
                     <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
                 </div>
             </div>
 
             <ul class="nav_item" id="nav_bar">
-                <li class="menuItem"><a class="active" href="index.html">Home</a></li>
+                <li class="menuItem"><a class="active" href="#">Home</a></li>
                 <li class="menuItem"><a href="categories.html">Categories</a></li>
                 <li class="menuItem"><a href="shop.html">Shop</a></li>
                 <li class="menuItem"><a href="blog.html">Blog</a></li>
-                <li class="menuItem"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li id="lg-bag" class="menuItem"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <a href="#" id="close"><i class="far fa-times"></i></a>
             </ul>
-        </header>
+            <div id="mobile">
+                <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                <i id="bar" class="fas fa-outdent"></i>
+            </div>
+        </div>
         
         <div class="under_develop">
             <h1><i class="fa-regular fa-face-sad-tear"></i></h1>

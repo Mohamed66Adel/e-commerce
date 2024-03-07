@@ -41,7 +41,7 @@ p {
 }
 
 /* Header */
-header {
+.header {
     height: 15vh;
     position: sticky;
     top: 0;
@@ -306,9 +306,22 @@ footer .copyright {
 }
 
 
+/* page under developing */
+.under_develop {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 100px 20px;
+}
+
+
 /* responsive part */
 
-@media (max-width:799px){
+@media screen and (max-width:799px) {
+
     .section-p1{
         padding: 40px 40px;
     }
@@ -366,22 +379,11 @@ footer .copyright {
     }
 
 }
-@media (max-width:477px){
-    header {
+@media screen and (max-width:477px) {
+    .header {
         padding: 10px 30px;
     }
     footer .copyright {
         text-align: start;
     }
-}
-
-/* page under developing */
-.under_develop {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    padding: 100px 20px;
 }
