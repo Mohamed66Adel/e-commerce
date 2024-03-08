@@ -95,3 +95,77 @@ function scrollSlider(direction) {
 
 }
 // ******************************************************************************
+
+const searchBox = document.querySelector("#search-box");
+const searchInput = document.querySelector(".search-input");
+const searchButton = document.querySelector("#search-icon");
+
+searchProducts = () => {
+    searchBox.classList.add("active-search");
+    const searchValue = searchInput.value.toLowerCase();
+    const filteredProducts = products.filter((product) => {
+        return product.name.toLowerCase().includes(searchValue);
+    });
+    searchInput.value = "";
+
+    const searchResultsDiv = document.createElement("div");
+    searchResultsDiv.classList.add("search-results");
+    searchBox.appendChild(searchResultsDiv);
+
+    if (filteredProducts.length === 0) {
+        searchResultsDiv.innerHTML = "<p>No products found</p>";
+        return;
+    }
+
+    filteredProducts.forEach((product) => {
+        const productDiv = document.createElement("div");
+        productDiv.classList.add("search-result");
+        productDiv.innerHTML = `
+        <img src="${product.image}" alt="${product.name}" />
+        <h3>${product.name}</h3>
+        <p>$${product.price}</p>
+        `;
+        searchResultsDiv.appendChild(productDiv);
+
+        // product.addEventListener("click", () => {
+        //     wrapper.style.transform = `translateX(-${(product.id-1) * 100}vw)`;
+        //     const selectedItem = document.querySelector(".selected");
+        //     selectedItem.classList.remove("selected");
+        //     const menuItems = document.querySelectorAll(".product-name");
+        //     menuItems.forEach((Item, index) => {
+        //         if (index === product.id -1){
+        //             Item.classList.add("selected");
+        //         }
+        //     });
+        // });
+        
+    });
+};
+
+clearSearchResults = () => {
+    searchBox.classList.remove("active-search");
+    const searchResults = document.querySelector(".search-results");
+    if (searchResults) {
+        searchResults.remove();
+    }
+};
+
+searchButton.addEventListener("click", () => {
+    clearSearchResults();
+    if (searchInput.value === "") return;
+    searchProducts();
+});
+
+searchInput.addEventListener("keyup", (e) => {
+    if (e.key === "Enter") {
+        if (searchInput.value === "") return;
+        searchProducts();
+    }
+});
+
+document.addEventListener("click", (e) => {
+    const inInsideSearchBox = searchBox.contains(e.target);
+    if (!inInsideSearchBox) {
+        clearSearchResults();
+    }
+});
