@@ -120,24 +120,13 @@ searchProducts = () => {
     filteredProducts.forEach((product) => {
         const productDiv = document.createElement("div");
         productDiv.classList.add("search-result");
+        productDiv.classList.add(product.id);
         productDiv.innerHTML = `
         <img src="${product.image}" alt="${product.name}" />
         <h3>${product.name}</h3>
         <p>$${product.price}</p>
         `;
         searchResultsDiv.appendChild(productDiv);
-
-        // product.addEventListener("click", () => {
-        //     wrapper.style.transform = `translateX(-${(product.id-1) * 100}vw)`;
-        //     const selectedItem = document.querySelector(".selected");
-        //     selectedItem.classList.remove("selected");
-        //     const menuItems = document.querySelectorAll(".product-name");
-        //     menuItems.forEach((Item, index) => {
-        //         if (index === product.id -1){
-        //             Item.classList.add("selected");
-        //         }
-        //     });
-        // });
         
     });
 };
@@ -150,16 +139,37 @@ clearSearchResults = () => {
     }
 };
 
+goToProduct = () => {
+    const found = document.querySelectorAll(".search-result");
+    found.forEach((result) =>{
+        result.addEventListener("click", () => {
+            const id = result.classList.item(1);
+            wrapper.style.transform = `translateX(-${(id-1) * 100}vw)`;
+            const selectedItem = document.querySelector(".selected");
+            selectedItem.classList.remove("selected");
+            const menuItems = document.querySelectorAll(".product-name");
+            menuItems.forEach((Item, index) => {
+                if (index == id -1){
+                    Item.classList.add("selected");
+                }
+            });
+            clearSearchResults();
+        });
+    });
+}
+
 searchButton.addEventListener("click", () => {
     clearSearchResults();
     if (searchInput.value === "") return;
     searchProducts();
+    goToProduct();
 });
 
 searchInput.addEventListener("keyup", (e) => {
     if (e.key === "Enter") {
         if (searchInput.value === "") return;
         searchProducts();
+        goToProduct();
     }
 });
 
