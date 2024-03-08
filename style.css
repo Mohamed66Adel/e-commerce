@@ -158,16 +158,33 @@ p {
 #swapper{
     display: flex;
     justify-content: center;
-    margin-top: 16px;
+    align-items: center;
+    gap: 16px;
+    margin-top: 18px;
     margin-bottom: 16px;
     
 }
 .pro-names{
     display: flex;
+    justify-content: space-around;
+    gap: 14px;
+    background-color: rgba(238, 14, 212, 0.425);
+    border-radius: 20px;
+    padding: 5px 5px;
 }
 .pro-names li{
     list-style: none;
     padding: 3px 3px;
+    font-weight: 700;
+    color: #4129ba;
+    cursor: pointer;
+}
+.right-arrow,
+.left-arrow {
+    font-weight: 700;
+    color: rgb(197, 12, 176);
+    font-size: 24px;
+    cursor: pointer;
 }
 
 /* ************* */
@@ -249,6 +266,7 @@ p {
 
 /* Footer */
 footer {
+    padding: 10px 10px;
     width: 100%;
     bottom: 0;
     background-color: rgb(41, 54, 199);
